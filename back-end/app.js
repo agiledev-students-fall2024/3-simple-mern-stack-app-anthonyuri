@@ -78,5 +78,33 @@ app.post('/messages/save', async (req, res) => {
   }
 })
 
+// a route to recieve requests (from Frontend/react..) and respond back with About Us data (mimics by hardcoding json data here)
+app.get('/about-us', async (req, res) => {
+  try {
+    res.status(200).json({
+      title: "About Us",
+      description: `Hi! I'm Anthony! I’m a senior at NYU studying Computer Science. I’ve always loved tech and have a big \
+interest in backend development and large-scale systems. Lately, I’ve been getting into front-end and full-stack \
+development, which I’m honestly really enjoying :)
+
+I grew up in Los Angeles with a Mexican background, which has definitely influenced my love for cooking, sports, and \
+discovering new places/cultures. One of the best parts of my college experience was studying abroad in Florence—loved \
+the Italian architecture and culture (and the food was crazy good & cheap!). I also enjoy traveling, cooking, 3D art, \
+gaming, dog walking, and exploring new hobbies!
+
+More on the tech side, I’ve had the chance to work on some cool projects, such as interning at LinkedIn, where I worked \
+on scaling infrastructure systems, and at Liberty Mutual, focusing on performance optimization software. I’m excited to \
+keep gaining new experiences and learning (such as JS & full-stack dev), especially in hands-on classes like this!`,
+      imageURL: "https://i.postimg.cc/br5vWP49/IMG-2192.jpg"
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      error: 'Failed to the load about-us content',
+      status: 'error'
+    });
+  }
+});
+
 // export the express app we created to make it available to other modules
 module.exports = app // CommonJS export style!
