@@ -3,7 +3,7 @@ import axios from 'axios';
 import './AboutUs.css'; 
 
 /**
- * A React component for displaying 'About Us' page which fetches the content (texts & desc) from the back-end
+ * A React component for displaying 'About Us' page which fetches the content (texts/imgURL) from the back-end
  * @param {*} param0 an object holding any props passed to this component from its parent component
  * @returns The contents of this component, in JSX form.
  */
